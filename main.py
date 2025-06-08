@@ -115,7 +115,7 @@ for img, mask in zip(augmented_images[:8], augmented_masks[:8]):
 
 
 # %%
-from iou import iou_metric
+from utils.iou import iou_metric
 
 # %%
 import tensorflow as tf
@@ -186,3 +186,61 @@ history = model.fit(
     epochs=30,
     batch_size=BATCH_SIZE
 )
+
+# %%
+model.save('flood_segmentation_model_data_augmented.keras')
+
+# %%
+# Plot training history#
+
+# Loss
+plt.figure(figsize=(12, 4))
+plt.subplot(1, 3, 1)
+plt.plot(history.history['loss'], label='Training Loss')
+plt.plot(history.history['val_loss'], label='Validation Loss')
+plt.legend()
+plt.title('Loss')
+
+# Accuracy
+plt.subplot(1, 3, 2)
+plt.plot(history.history['accuracy'], label='Training Accuracy')
+plt.plot(history.history['val_accuracy'], label='Validation Accuracy')
+plt.legend()
+plt.title('Accuracy')
+
+# Intersection over Union
+plt.subplot(1, 3, 3)
+plt.plot(history.history['iou_metric'], label='Training IoU')
+plt.plot(history.history['val_iou_metric'], label='Validation IoU')
+plt.legend()
+plt.title('IoU')
+plt.show()
+
+
+# %%
+from tensorflow.keras.models import load_model
+
+model = load_model('./trained_models/flood_segmentation_model_data_augmented.keras')
+
+def visualize_predictions(num_images=5):
+    preds = model.predict(X_val[:num_images])
+
+    for i in range(num_images):
+        plt.figure(figsize=(12, 4))
+        plt.subplot(1, 3, 1)
+        plt.title("Image")
+        plt.imshow(X_val[i])
+
+        plt.subplot(1, 3, 2)
+        plt.title("True Mask")
+        plt.imshow(y_val[i].squeeze(), cmap='gray')
+
+        plt.subplot(1, 3, 3)
+        plt.title("Predicted Mask")
+        plt.imshow(preds[i].squeeze(), cmap='gray')
+
+        plt.show()
+
+visualize_predictions()
+
+# %%
