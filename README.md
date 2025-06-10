@@ -30,3 +30,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+Or for YOLO: 
+```bash
+pip install -r requirements_yolo.txt
+```
