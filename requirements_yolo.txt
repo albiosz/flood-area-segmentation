@@ -11,7 +11,8 @@ kagglehub
 pyyaml
 scikit-learn 
 opencv-python
-matplotlib
+matplotlib-inline
+import_ipynb
 
 # PyTorch mit CUDA-Unterstützung
 torch>=2.0.0+cu117

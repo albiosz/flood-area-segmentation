@@ -1,0 +1,6 @@
+path: /home/aie3/christina/flood-area-segmentation/datasets/yolo
+train: train/images
+val: val/images
+test: test/images     
+nc: 1                 # amount of classes - here flood = 1
+names: ['flood'] 
