@@ -50,6 +50,7 @@ opencv-python-headless==4.11.0.86
 opt_einsum==3.4.0
 optree==0.16.0
 packaging==25.0
+pandas
 parso==0.8.4
 pexpect==4.9.0
 pillow==11.2.1
@@ -72,6 +73,7 @@ rich==14.0.0
 rpds-py==0.25.1
 scikit-learn==1.7.0
 scipy==1.15.3
+seaborn
 simsimd==6.4.9
 six==1.17.0
 stack-data==0.6.3
