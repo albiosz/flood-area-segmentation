@@ -1,0 +1,20 @@
+--extra-index-url https://download.pytorch.org/whl/cu117
+
+ultralytics>=8.0.0
+torch>=2.0.0
+opencv-python
+matplotlib
+Pillow
+numpy
+torchinfo
+kagglehub
+pyyaml
+scikit-learn 
+opencv-python
+matplotlib-inline
+import_ipynb
+
+# PyTorch mit CUDA-Unterstützung
+torch>=2.0.0+cu117
+torchvision>=0.15.0+cu117
+torchaudio>=2.0.0+cu117
