@@ -13,6 +13,8 @@ scikit-learn
 opencv-python
 matplotlib-inline
 import_ipynb
+albumentations
+ipywidgets
 
 # PyTorch mit CUDA-Unterstützung
 torch>=2.0.0+cu117
