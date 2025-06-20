@@ -18,8 +18,9 @@ F1 -> `Remote SSH: Connect current Window ...` -> Choose aie-project
 
 
 # Install dependencies
+- it requires python 3.12 or lower (tensorflow does not support python 3.12)
 ```bash
-python3.12 -m venv .venv
+python -m venv .venv
 ```
 
 ```bash
