@@ -1,4 +1,4 @@
-path: /home/aie3/christina/flood-area-segmentation/datasets/yolo/augmented
+path: /home/aie3/christina/dataset/yolo/augmented
 train: train/images
 val: val/images
 test: test/images     
